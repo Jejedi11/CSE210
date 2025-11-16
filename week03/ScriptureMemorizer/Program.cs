@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics;
+using System.Xml.Serialization;
 
 class Program
 {
@@ -14,10 +16,13 @@ class Program
         while (input != "quit")
         {
             Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine();
+            Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
             input = Console.ReadLine();
             if (input == "")
             {
                 scripture.HideRandomWords();
+                input = scripture.IsCompletelyHidden();
             }
             Console.Clear();
         }
