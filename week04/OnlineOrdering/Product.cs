@@ -4,7 +4,22 @@ public class Product
     private int _id;
     private double _price;
     private int _quantity;
-    private double _totalCost;
 
+    public double TotalCost()
+    {
+        return _price * _quantity;
+    }
 
+    public string GiveLabelInfo()
+    {
+        return _name + ": " + _id + ", ";
+    }
+
+    public Product(string name, int id, double price, int quantity)
+    {
+        _name = name;
+        _id = id;
+        _price = price;
+        _quantity = quantity;
+    }
 }
