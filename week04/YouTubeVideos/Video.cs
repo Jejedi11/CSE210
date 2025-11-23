@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Transactions;
 
 public class Video
@@ -9,7 +10,7 @@ public class Video
 
     public int ListComments()
     {
-        return _comments.Count;
+        return _comments.Count();
     }
 
     public Video(string title, string author, double length, List<Comment> comments)
@@ -18,5 +19,14 @@ public class Video
         _author = author;
         _length = length;
         _comments = comments;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"Title: {_title}");
+        Console.WriteLine($"Author: {_author}");
+        Console.WriteLine($"Video Length: {_length}");
+        Console.WriteLine($"Comments: {ListComments()}");
+
     }
 }
