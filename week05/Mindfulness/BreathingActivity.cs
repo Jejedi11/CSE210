@@ -1,9 +1,8 @@
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string name, string description) : base(name, description)
-    {
-        
-    }
+    public BreathingActivity(string name, string description)
+        : base(name, description) { }
+
     public void Run()
     {
         Console.Clear();
@@ -22,3 +21,4 @@ public class BreathingActivity : Activity
         EndMessage();
     }
 }
+
