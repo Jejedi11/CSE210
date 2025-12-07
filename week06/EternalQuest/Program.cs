@@ -24,12 +24,16 @@ class Program
             {
                 Console.WriteLine("Select a Goal type:");
                 Console.WriteLine("1. Simple Goal");
-                Console.WriteLine("1. Eternal Goal");
-                Console.WriteLine("1. Checklist Goal");
+                Console.WriteLine("2. Eternal Goal");
+                Console.WriteLine("3. Checklist Goal");
                 Console.Write("Which type of goal would you like to create?");
                 goalType = Console.ReadLine();
 
-                if (goalType == "1") { }
+                if (goalType == "1")
+                {
+                    SimpleGoal simpleGoal = new SimpleGoal();
+
+                }
             }
         }
     }
