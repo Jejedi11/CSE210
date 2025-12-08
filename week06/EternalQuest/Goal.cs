@@ -16,6 +16,16 @@ public abstract class Goal
 
     public string GetDetailsString()
     {
-        return $"[] {_name}: {_description}";
+        string check = "";
+        if (IsComplete() == true)
+        {
+            check = "X";
+        }
+        return $"[{check}] {_name}: {_description}";
+    }
+
+    public string GetStringRepresentation()
+    {
+        return $"{_name}, {_description}, {_points}";
     }
 }
