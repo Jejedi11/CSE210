@@ -7,9 +7,11 @@ class Program
         Console.WriteLine("Hello World! This is the EternalQuest Project.");
         string choice = "";
         string goalType = "";
+        GoalManager goalManager = new GoalManager();
         while (choice != "6")
         {
-            //write points
+            Console.WriteLine("Total Points:" + goalManager.GetPoints());
+            Console.WriteLine("");
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
@@ -29,13 +31,36 @@ class Program
                 Console.Write("Which type of goal would you like to create?");
                 goalType = Console.ReadLine();
 
+                Console.Write("Enter a name for the new goal: ");
+                string name = Console.ReadLine();
+                Console.Write("Enter a description of the goal: ");
+                string description = Console.ReadLine();
+                Console.Write("How many points will be associated with this goal?");
+                string points = Console.ReadLine();
+
                 if (goalType == "1")
                 {
-                    SimpleGoal simpleGoal = new SimpleGoal();
-
+                    goalManager.CreateGoal("simple", name, description, points);
                 }
+                else if (goalType == "2")
+                {
+                    goalManager.CreateGoal("eternal", name, description, points);
+                }
+                else if (goalType == "3")
+                {
+                    goalManager.CreateGoal("checkList", name, description, points);
+                }
+            }
+            else if (choice == "2")
+            {
+                goalManager.ListGoals();
+            }
+            else if (choice == "5")
+            {
+                goalManager.ListGoals();
+                Console.WriteLine("Which goal did you accomplish? ");
+                string complete = Console.ReadLine();
             }
         }
     }
 }
-

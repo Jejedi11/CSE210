@@ -4,6 +4,21 @@ public abstract class Goal
     private string _description;
     private string _points;
 
+    public string GetName()
+    {
+        return _name;
+    }
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public string GetPoints()
+    {
+        return _points;
+    }
+
     public Goal(string name, string description, string points)
     {
         _name = name;
@@ -11,12 +26,12 @@ public abstract class Goal
         _points = points;
     }
 
-    public abstract void RecordEvent();
+    public abstract void RecordEvent(GoalManager goalManager);
     public abstract bool IsComplete();
 
-    public string GetDetailsString()
+    public virtual string GetDetailsString()
     {
-        string check = "";
+        string check = " ";
         if (IsComplete() == true)
         {
             check = "X";
