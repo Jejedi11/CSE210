@@ -20,6 +20,14 @@ public class SimpleGoal : Goal
         goalManager.AddPoints(GetPoints());
     }
 
-    public SimpleGoal(string name, string description, string points)
-        : base(name, description, points) { }
+    public SimpleGoal(string name, string description, string points, string isComplete)
+        : base(name, description, points)
+    {
+        _isComplete = bool.Parse(isComplete);
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return $"{GetName()},{GetDescription()},{GetPoints()},{_isComplete}";
+    }
 }

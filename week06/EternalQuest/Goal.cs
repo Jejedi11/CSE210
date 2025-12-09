@@ -36,11 +36,11 @@ public abstract class Goal
         {
             check = "X";
         }
-        return $"[{check}] {_name}: {_description}";
+        return $"[{check}] {_name}: ({_description})";
     }
 
-    public string GetStringRepresentation()
+    public virtual string GetStringRepresentation()
     {
-        return $"{_name}, {_description}, {_points}";
+        return $"{_name},{_description},{_points}";
     }
 }

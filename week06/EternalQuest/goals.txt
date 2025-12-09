@@ -1,0 +1,5 @@
+140
+goal,yes,30,True
+eternal,daily,20
+check,y,20,3,3,100
+simply,good,50,False
